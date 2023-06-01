@@ -131,7 +131,7 @@ public class TelaJogo extends JPanel implements ActionListener {
     }
 
     private void validarLimites() {
-        //A cabeça bateu no corpo?
+        // Se a cabeça bater no próprio corpo:
         for (int i = corpoCobra; i > 0; i--) {
             if (eixoX[0] == eixoX[i] && eixoY[0] == eixoY[i]) {
                 estaRodando = false;
@@ -139,12 +139,12 @@ public class TelaJogo extends JPanel implements ActionListener {
             }
         }
 
-        //A cabeça tocou uma das bordas Direita ou esquerda?
+        // Quando a cabeça toca as paredes esquerda e direita:
         if (eixoX[0] < 0 || eixoX[0] > LARGURA_TELA) {
             estaRodando = false;
         }
 
-        //A cabeça tocou o piso ou o teto?
+        // Quando a cabeça toca o piso ou o teto:
         if (eixoY[0] < 0 || eixoY[0] > ALTURA_TELA) {
             estaRodando = false;
         }
